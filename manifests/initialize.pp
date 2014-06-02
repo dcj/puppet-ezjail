@@ -9,9 +9,9 @@ class ezjail::initialize (
     creates => "/usr/jails/basejail",
   }
 
-  # file_line { 'ezjail_enable':
-  #   line => 'ezjail_enable="YES"',
-  #   path => '/etc/rc.conf',
-  # }
+  file_line { 'ezjail_enable':
+    line => 'ezjail_enable="YES"',
+    path => '/etc/rc.conf',
+  }
 
 }
