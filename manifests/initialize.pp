@@ -5,7 +5,7 @@ class ezjail::initialize (
   include ezjail::params
 
   exec { 'ezjail_admin_install':
-    command => "/usr/local/bin/ezjail-admin install -mp -r $::ezjail::params::os_version_default",
+    command => "$::ezjail::params::prefix/bin/ezjail-admin install -mp -r $::ezjail::params::os_version_default",
     creates => "$::ezjail::params::jail_root/basejail",
   }
 

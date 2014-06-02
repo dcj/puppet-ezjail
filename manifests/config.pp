@@ -2,7 +2,7 @@ class ezjail::config {
   include ezjail::params
 
   file { 'ezjail.conf':
-    path    => '/usr/local/etc/ezjail.conf',
+    path    => "$::ezjail::params::prefix/etc/ezjail.conf",
     ensure  => present,
     source  => 'puppet:///modules/ezjail/ezjail.conf',
     owner   => 'root',
