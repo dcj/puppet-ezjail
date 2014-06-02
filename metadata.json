@@ -1,0 +1,17 @@
+{
+  "name": "freebsd-ezjail",
+  "version": "0.0.1",
+  "author": "dcj",
+  "summary": "Instantiates FreeBSD jails using ezjail",
+  "license": "?",
+  "source": "GITHUB",
+  "project_page": "THERE",
+  "issues_url": "GITHUB",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
+
