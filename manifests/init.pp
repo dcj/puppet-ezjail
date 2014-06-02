@@ -40,10 +40,4 @@ class ezjail {
   class { '::ezjail::package': } ->
   class { '::ezjail::config': } ->
   class { '::ezjail::initialize': }
-
-  class { '::ezjail::create': 
-    jail_name => $jail_name,
-    jail_ip   => $jail_ip } ->
-  class { '::ezjail::service': 
-    jail_name => $jail_name }
 }
