@@ -11,6 +11,7 @@ class ezjail::config {
 
   zfs { 'zroot/ezjail':
     ensure => 'present',
+    mountpoint => "$::ezjail::params::jail_root",
   }
 
 }
