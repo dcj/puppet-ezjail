@@ -36,14 +36,11 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 
-class ezjail (
-  $jail_name = undef,
-  $jail_ip = undef,
-  $jail_archive = undef
-  ) { 
+class ezjail { 
   class { '::ezjail::package': } ->
   class { '::ezjail::config': } ->
-  class { '::ezjail::initialize': } ->
+  class { '::ezjail::initialize': }
+
   class { '::ezjail::create': 
     jail_name => $jail_name,
     jail_ip   => $jail_ip } ->

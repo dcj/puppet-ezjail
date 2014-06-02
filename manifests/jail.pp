@@ -1,6 +1,15 @@
-class ezjail::service (
+define ezjail::jail ( 
   $jail_name = undef,
+  $jail_ip   = undef,
   ) {
+
+  include ezjail
+                         
+  exec { "ezjail_${jail_name}":
+    command  => "/usr/local/bin/ezjail-admin create -c zfs ${jail_name} ${jail_ip}",
+    creates  => "$::ezjail::params::jail_root/${jail_name}",
+    require  => Class [ 'ezjail::initialize' ],
+  }
 
   service { "ezjail_${jail_name}":
     ensure    => running,
@@ -13,4 +22,31 @@ class ezjail::service (
     status    => "/usr/local/bin/ezjail-admin console -e /usr/bin/true ${jail_name}",
   }
 
+  Exec[ "ezjail_${jail_name}" ] -> Service [ "ezjail_${jail_name}" ]
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
