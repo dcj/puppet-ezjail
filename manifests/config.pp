@@ -1,4 +1,5 @@
 class ezjail::config {
+  include ezjail::params
 
   file { 'ezjail.conf':
     path    => '/usr/local/etc/ezjail.conf',
